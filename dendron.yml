@@ -4,6 +4,9 @@ vaults:
         fsPath: vault
 useFMTitle: true
 site:
+  config: 
+    root:
+      publishByDefault: false
     copyAssets: true
     siteHierarchies:
         - dendron
