@@ -9,7 +9,7 @@ export const personalData = {
   profileImage: "assets/images/profile.professional.portrait.jpg",
   email: "jyoung0696@gmail.com",
   address: "",
-  resumeFile: "assets/jonathanyoung.cv.tech.pdf",
+  resumeFile: "assets/jonathanyoung.cv.2.pdf",
   socialProfiles: [
     {
       name: "LinkedIn",

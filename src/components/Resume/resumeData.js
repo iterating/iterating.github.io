@@ -14,10 +14,11 @@ export const resumeData = {
         title: "Software Engineer (contract)",
         company: "LA Film Lab and Studio, Los Angeles CA",
         accomplishments: [
-          "Developed full-stack solutions with component-driven architecture using TypeScript, Nuxt.js, and Node.js with Supabase",
-          "Developed automated data synchronization API endpoint between Square's e-commerce platform and Supabase database",
-          "Implemented real-time event architecture with SSE and REST APIs achieving <100ms latency",
-          "Developed optimized order management system that reduced processing time by 25%"
+          "Responsible for building a component-driven architecture using TypeScript, Nuxt.js, and Node.js with Supabase, delivering mission-critical features that improved operational efficiency and customer engagement",
+          "Developed API endpoints that retrieves and updates order information between Square's e-commerce SDK and Supabase database, processing batch transactions with error handling and real-time status tracking for customer orders",
+          "Implemented real-time event architecture with SSE, enabling instant order updates across all platforms",
+          "Developed an optimized kiosk system that reduced in-person order times by 25% and reduced manual errors",
+          "Created database migration tools with Javascript and SQL, leading to successful database migration"
         ]
       },
       {
@@ -26,9 +27,9 @@ export const resumeData = {
         title: "Web Developer (contract)",
         company: "Greater Boston Snow Removal, Boston MA",
         accomplishments: [
-          "Architected and implemented scalable microservices platform that transformed company into Boston's market leader",
+          "Developed business service platform that transformed company into Boston's market leader",
           "Built location-based worker matching system using Google Cloud API and MongoDB geospatial indexing",
-          "Implemented robust security infrastructure with JWT-based authentication and role-based access control"
+          "Implemented microservices architecture using TypeScript and Node.js, achieving 99.9% uptime during peak snow events with 1,000+ daily transactions"
         ]
       },
       {

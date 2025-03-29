@@ -44,15 +44,56 @@ export default function Portfolio() {
               >
                 <div className={`portfolio-item ${project.type}`}>
                   <div className="portfolio-item-inner">
-                    <a href={project.link} data-lightbox="example-1">
-                      <img
-                        src={config.getAssetPath(project.image)}
-                        alt={project.title}
-                        loading="lazy"
-                        style= {{}}
-                      />
-                    </a>
-
+                    {Array.isArray(project.link) ? (
+                      // If link is an array, create multiple lightbox links
+                      <>
+                        {/* First image is visible */}
+                        <a href={config.getAssetPath(project.link[0])} data-lightbox={`gallery-${project.id}`}>
+                          <img
+                            src={config.getAssetPath(
+                              typeof project.image === "string"
+                                ? project.image
+                                : project.image.src
+                            )}
+                            style={
+                              typeof project.image === "string"
+                                ? {}
+                                : { height: project.image.height }
+                            }
+                            alt={project.title}
+                            loading="lazy"
+                          />
+                        </a>
+                        {/* Hidden links for additional gallery images */}
+                        {project.link.slice(1).map((link, index) => (
+                          <a 
+                            key={index}
+                            href={config.getAssetPath(link)} 
+                            data-lightbox={`gallery-${project.id}`}
+                            style={{ display: 'none' }}
+                            loading="lazy"
+                          ></a>
+                        ))}
+                      </>
+                    ) : (
+                      // Regular single image lightbox
+                      <a href={project.link} data-lightbox="example-1">
+                        <img
+                          src={config.getAssetPath(
+                            typeof project.image === "string"
+                              ? project.image
+                              : project.image.src
+                          )}
+                          style={
+                            typeof project.image === "string"
+                              ? {}
+                              : { height: project.image.height }
+                          }
+                          alt={project.title}
+                          loading="lazy"
+                        />
+                      </a>
+                    )}
                     <ul className="portfolio-categories">
                       {project.categories.map((category, index) => (
                         <li key={index}>
@@ -62,7 +103,7 @@ export default function Portfolio() {
                     </ul>
                   </div>
                   <h2>
-                    <a href={project.link}>{project.title}</a>
+                    <a href={project.liveUrl}>{project.title}</a>
                   </h2>
                 </div>
               </div>

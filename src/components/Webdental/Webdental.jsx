@@ -103,7 +103,7 @@ export default function Websites() {
                     </ul>
                   </div>
                   <h2>
-                    <a href={project.link}>{project.title}</a>
+                    <a href={project.liveUrl}>{project.title}</a>
                   </h2>
                 </div>
               </div>
