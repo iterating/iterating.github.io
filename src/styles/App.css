@@ -115,7 +115,7 @@ ul {
   border: 1px solid #565656;
   padding: 9px 20px;
   border-radius: 30px;
-  margin-bottom: 53px;
+  margin-bottom: 30px;
   display: inline-flex;
   align-items: center;
 }
@@ -585,7 +585,8 @@ main.drake-main {
   position: fixed;
   left: 20px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(0.9);
+  transform-origin: left center;
   padding: 50px;
   z-index: 10;
 }
@@ -608,7 +609,7 @@ main.drake-main {
 }
 
 .left-sidebar .sidebar-header .designation {
-  max-width: 110px;
+  max-width: 140px;
   text-align: right;
   color: #fff;
   font-size: 14px;
@@ -775,7 +776,7 @@ body .body-overlay {
 
 /* 10 - About */
 .about-area {
-  padding-top: 90px;
+  padding-top: 50px;
   padding-bottom: 90px;
 }
 .about-area .about-content p {
@@ -786,7 +787,7 @@ body .body-overlay {
 
 /* 11 - Resume */
 .resume-area {
-  padding-top: 90px;
+  padding-top: 50px;
   padding-bottom: 90px;
 }
 .resume-area .resume-content .resume-timeline .item {
@@ -855,7 +856,7 @@ body .body-overlay {
 
 /* 12 - Services */
 .services-area {
-  padding-top: 90px;
+  padding-top: 50px;
   padding-bottom: 90px;
 }
 .services-items .service-item {
@@ -911,17 +912,17 @@ body .body-overlay {
 
 /* 13 - Skills */
 .skills-area {
-  padding-top: 90px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 90px;
 }
 .skills .skill {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .skills .skill .skill-inner {
   border: 2px solid #565656;
   border-radius: 85px;
-  padding: 54px 0 48px 0;
-  margin-bottom: 20px;
+  padding: 30px 0 30px 0;
+  margin-bottom: 10px;
   transition: .3s;
 }
 .skills .skill:hover .skill-inner {
@@ -943,11 +944,9 @@ body .body-overlay {
   margin: 0;
 }
 
-
-
 /* 14 - Portfolio */
 .portfolio-area {
-  padding-top: 90px;
+  padding-top: 50px;
   padding-bottom: 90px;
 }
 .portfolio-items .portfolio-item {
@@ -1118,7 +1117,7 @@ body .body-overlay {
 
 /* 17 - Pricing Table */
 .pricing-area {
-  padding-top: 90px;
+  padding-top: 50px;
   padding-bottom: 90px;
 }
 
