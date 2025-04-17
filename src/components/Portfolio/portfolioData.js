@@ -27,7 +27,7 @@ export const portfolioData = {
     {
       id: 2,
       title: "Greater Boston Snow Removal Business Platform",
-      image: "assets/images/portfolio.GBSnow.1.png",
+      image: "assets/images/portfolio.gbsm.map.gif",
       link: [
         "assets/images/portfolio.gbsm.map.gif",
         "assets/images/portfolio.GBSnow.1.png",
@@ -44,8 +44,8 @@ export const portfolioData = {
       title: "Medical Decision Tools",
       image: "assets/images/portfolio.medicalc.screenshot.clean.png",
       link: [
-        "assets/images/portfolio.medicalc.screenshot.clean.png",
         "assets/images/portfolio.sirscalc.gif",
+        "assets/images/portfolio.medicalc.screenshot.clean.png",
         "assets/images/portfolio.respiratorycalc.results.jpg",
       ],
       type: "portfolio-full",
@@ -56,8 +56,8 @@ export const portfolioData = {
     {
       id: 4,
       title: "Placenotes Location First Social Platform",
-      image: "assets/images/portfolio.placenotes.checklist.jpg",
-      link: "assets/images/portfolio.placenotes.checklist.jpg",
+      image: "assets/images/portfolio.placenotes.note.jpg",
+      link: "assets/images/portfolio.placenotes.note.jpg",
       type: "portfolio-full",
       animation: "fade-right",
       categories: ["React", "GraphQL", "MongoDB", "JWT Auth", "AWS"],

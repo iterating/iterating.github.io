@@ -14,26 +14,24 @@
     "fix-gh-pages": "node scripts/fix-gh-pages.js"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.2",
-    "express": "^4.18.2",
-    "jquery": "^3.6.4",
-    "lightbox2": "^2.11.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-owl-carousel": "^2.3.3",
-    "react-scripts": "5.0.1",
-    "react-scrollspy": "^3.4.3",
-    "web-vitals": "^2.1.4"
+    "aos": ">=2.3.4",
+    "cors": ">=2.8.5",
+    "dotenv": ">=16.3.2",
+    "express": ">=4.18.2",
+    "jquery": ">=3.6.4",
+    "lightbox2": ">=2.11.4",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    // "react-owl-carousel": ">=2.3.3",
+    // "react-scripts": ">=5.0.1",
+    // "react-scrollspy": ">=3.4.3",
+    "web-vitals": ">=2.1.4"
   },
   "devDependencies": {
-    "@svgr/core": "^8.0.0",
-    "@svgr/plugin-jsx": "^8.0.1",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "gh-pages": "^6.1.1",
-    "vite": "^4.4.5"
+    "@types/react": ">=18.2.15",
+    "@types/react-dom": ">=18.2.7",
+    "@vitejs/plugin-react": ">=4.0.3",
+    "gh-pages": ">=6.1.1",
+    "vite": ">=4.4.5"
   }
 }

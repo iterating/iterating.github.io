@@ -103,7 +103,7 @@ export default function Websites() {
                     </ul>
                   </div>
                   <h2>
-                    <a href={project.liveUrl}>{project.title}</a>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">{project.title}</a>
                   </h2>
                 </div>
               </div>

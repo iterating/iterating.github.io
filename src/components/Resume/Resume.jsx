@@ -52,12 +52,12 @@ export default function Resume() {
               </div>
             ))}
 
-            <br />
-            <h1 className="scroll-animation" data-aos="fade-up">
+            {/* <br /> */}
+            {/* <h1 className="scroll-animation" data-aos="fade-up">
               {resumeData.skillsSection.sectionHeading}
-            </h1>
+            </h1> */}
 
-            <div className="skills-container scroll-animation" data-aos="fade-up" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
+            {/* <div className="skills-container scroll-animation" data-aos="fade-up" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
               {resumeData.skillsSection.skills.map((skill, index) => (
                 <div 
                   key={index} 
@@ -71,10 +71,10 @@ export default function Resume() {
                   {skill}
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <br />
-            <h1 className="scroll-animation" data-aos="fade-up">
+            {/* <h1 className="scroll-animation" data-aos="fade-up">
               {resumeData.projectsSection.sectionHeading}
             </h1>
 
@@ -88,7 +88,7 @@ export default function Resume() {
                   ))}
                 </ul>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
