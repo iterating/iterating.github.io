@@ -911,6 +911,13 @@ body .body-overlay {
 
 
 /* 13 - Skills */
+.skill-icon {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+}
 .skills-area {
   padding-top: 50px;
   padding-bottom: 90px;
@@ -1798,6 +1805,40 @@ body .body-overlay {
   resize: none;
 }
 
+/* Form validation styles */
+.input-group.has-error input,
+.input-group.has-error textarea {
+  border-color: #ff3366 !important;
+  border-bottom: 1px solid #ff3366 !important;
+}
+
+.error-message {
+  color: #ff3366;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+/* Button loading state */
+.theme-btn.loading {
+  opacity: 0.8;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.theme-btn.loading:after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 8px);
+  animation: rotating 0.7s linear infinite;
+}
 
 /* 25 - Footer */
 .footer-area {

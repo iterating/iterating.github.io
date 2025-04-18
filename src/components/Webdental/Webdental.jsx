@@ -36,10 +36,11 @@ export default function Websites() {
           </div>
 
           <div className="row portfolio-items">
-            {portfolioData.projects.map((project) => (
+            {portfolioData.projects.map((project, index) => (
               <div
                 className="col-md-12 scroll-animation"
-                data-aos={project.animation}
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                data-aos-delay={index * 100}
                 key={project.id}
               >
                 <div className={`portfolio-item ${project.type}`}>

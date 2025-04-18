@@ -1,15 +1,31 @@
-import React,{useEffect} from 'react'
+import React, { useEffect, useMemo } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { config } from '../../config'
 import { skillsData } from './skillsData'
 
 export default function Skills() {
-    useEffect(()=>{
+    // Initialize AOS only once when component mounts
+    useEffect(() => {
         AOS.init({duration:1000})
-    },[])
-  return (
-    <section className="skills-area page-section scroll-to-page" id="skills">
+    }, [])
+  
+    // Memoize the skill items to prevent unnecessary re-renders
+    const skillItems = useMemo(() => {
+        return skillsData.map((skill, index) => (
+            <div key={`skill-${skill.name}`} className="col-md-3 scroll-animation" data-aos={skill.animation}>
+                <div className="skill">
+                    <div className="skill-inner">
+                        <i className={`${skill.icon} skill-icon`}></i>
+                    </div>
+                    <p className="name">{skill.name}</p>
+                </div>
+            </div>
+        ));
+    }, [skillsData]);
+  
+    return (
+        <section className="skills-area page-section scroll-to-page" id="skills">
             <div className="custom-container">
                 <div className="skills-content content-width">
                     <div className="section-header">
@@ -20,19 +36,10 @@ export default function Skills() {
                     </div>
 
                     <div className="row skills text-center">
-                        {skillsData.map((skill, index) => (
-                            <div key={index} className="col-md-3 scroll-animation" data-aos={skill.animation}>
-                                <div className="skill">
-                                    <div className="skill-inner">
-                                        <i className={`${skill.icon}`} style={{ fontSize: '50px', height: '10px', width: '50px' }}></i>
-                                    </div>
-                                    <p className="name">{skill.name}</p>
-                                </div>
-                            </div>
-                        ))}
+                        {skillItems}
                     </div>    
                 </div>
             </div>
-    </section>
-  )
+        </section>
+    )
 }

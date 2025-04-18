@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useMemo, useCallback } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import { config } from "../../config"
@@ -8,6 +8,7 @@ import "lightbox2/dist/css/lightbox.min.css"
 import "lightbox2/dist/js/lightbox.js"
 
 export default function Portfolio() {
+  // Initialize AOS and Lightbox only once when component mounts
   useEffect(() => {
     AOS.init({ duration: 1000 })
     Lightbox.option({
@@ -17,6 +18,91 @@ export default function Portfolio() {
       wrapAround: true,
     })
   }, [])
+
+  // Memoize the gallery link creation to improve performance
+  const renderGalleryLinks = useCallback((project) => {
+    if (!Array.isArray(project.link)) return null;
+    
+    return project.link.slice(1).map((link, index) => (
+      <a 
+        key={`gallery-link-${project.id}-${index}`}
+        href={config.getAssetPath(link)} 
+        data-lightbox={`gallery-${project.id}`}
+        style={{ display: 'none' }}
+        loading="lazy"
+      ></a>
+    ));
+  }, []);
+
+  // Memoize project items to prevent unnecessary re-renders
+  const projectItems = useMemo(() => {
+    return portfolioData.projects.map((project, index) => (
+      <div
+        className="col-md-12 scroll-animation"
+        data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+        data-aos-delay={index * 100}
+        key={`project-${project.id}`}
+      >
+        <div className={`portfolio-item ${project.type}`}>
+          <div className="portfolio-item-inner">
+            {Array.isArray(project.link) ? (
+              // If link is an array, create multiple lightbox links
+              <>
+                {/* First image is visible */}
+                <a href={config.getAssetPath(project.link[0])} data-lightbox={`gallery-${project.id}`}>
+                  <img
+                    src={config.getAssetPath(
+                      typeof project.image === "string"
+                        ? project.image
+                        : project.image.src
+                    )}
+                    style={
+                      typeof project.image === "string"
+                        ? {}
+                        : { height: project.image.height }
+                    }
+                    alt={project.title}
+                    loading="lazy"
+                  />
+                </a>
+                {/* Hidden links for additional gallery images */}
+                {renderGalleryLinks(project)}
+              </>
+            ) : (
+              // Regular single image lightbox
+              <a href={project.link} data-lightbox="example-1">
+                <img
+                  src={config.getAssetPath(
+                    typeof project.image === "string"
+                      ? project.image
+                      : project.image.src
+                  )}
+                  style={
+                    typeof project.image === "string"
+                      ? {}
+                      : { height: project.image.height }
+                  }
+                  alt={project.title}
+                  loading="lazy"
+                />
+              </a>
+            )}
+            <ul className="portfolio-categories">
+              {project.categories.map((category, index) => (
+                <li key={`category-${index}`}>
+                  <a disabled>{category}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <h2>
+            <a href={project.liveUrl}>{project.title}</a>
+          </h2>
+        </div>
+      </div>
+    ));
+  }, [portfolioData.projects, renderGalleryLinks]);
+
   return (
     <section
       className="portfolio-area page-section scroll-to-page"
@@ -36,78 +122,7 @@ export default function Portfolio() {
           </div>
 
           <div className="row portfolio-items">
-            {portfolioData.projects.map((project) => (
-              <div
-              key={project.id}
-                className="col-md-12 scroll-animation"
-                data-aos={project.animation}
-              >
-                <div className={`portfolio-item ${project.type}`}>
-                  <div className="portfolio-item-inner">
-                    {Array.isArray(project.link) ? (
-                      // If link is an array, create multiple lightbox links
-                      <>
-                        {/* First image is visible */}
-                        <a href={config.getAssetPath(project.link[0])} data-lightbox={`gallery-${project.id}`}>
-                          <img
-                            src={config.getAssetPath(
-                              typeof project.image === "string"
-                                ? project.image
-                                : project.image.src
-                            )}
-                            style={
-                              typeof project.image === "string"
-                                ? {}
-                                : { height: project.image.height }
-                            }
-                            alt={project.title}
-                            loading="lazy"
-                          />
-                        </a>
-                        {/* Hidden links for additional gallery images */}
-                        {project.link.slice(1).map((link, index) => (
-                          <a 
-                            key={index}
-                            href={config.getAssetPath(link)} 
-                            data-lightbox={`gallery-${project.id}`}
-                            style={{ display: 'none' }}
-                            loading="lazy"
-                          ></a>
-                        ))}
-                      </>
-                    ) : (
-                      // Regular single image lightbox
-                      <a href={project.link} data-lightbox="example-1">
-                        <img
-                          src={config.getAssetPath(
-                            typeof project.image === "string"
-                              ? project.image
-                              : project.image.src
-                          )}
-                          style={
-                            typeof project.image === "string"
-                              ? {}
-                              : { height: project.image.height }
-                          }
-                          alt={project.title}
-                          loading="lazy"
-                        />
-                      </a>
-                    )}
-                    <ul className="portfolio-categories">
-                      {project.categories.map((category, index) => (
-                        <li key={index}>
-                          <a disabled>{category}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <h2>
-                    <a href={project.liveUrl}>{project.title}</a>
-                  </h2>
-                </div>
-              </div>
-            ))}
+            {projectItems}
           </div>
         </div>
       </div>

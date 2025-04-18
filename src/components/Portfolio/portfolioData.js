@@ -56,10 +56,10 @@ export const portfolioData = {
     {
       id: 4,
       title: "Placenotes Location First Social Platform",
-      image: "assets/images/portfolio.placenotes.note.jpg",
-      link: "assets/images/portfolio.placenotes.note.jpg",
+      image: "assets/images/portfolio.placenotes.images.jpg",
+      link: ["assets/images/portfolio.placenotes.images.jpg", "assets/images/portfolio.placenotes.note.jpg"],
       type: "portfolio-full",
-      animation: "fade-right",
+      animation: "fade-up",
       categories: ["React", "GraphQL", "MongoDB", "JWT Auth", "AWS"],
       liveUrl: "https://placenotes.vercel.app/",
     },

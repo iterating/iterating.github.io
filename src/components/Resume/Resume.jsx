@@ -22,7 +22,7 @@ export default function Resume() {
 
           <div className="resume-timeline">
             {resumeData.experienceSection.experiences.map((experience, index) => (
-              <div className="item scroll-animation" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} key={experience.id}>
+              <div className="item scroll-animation" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} key={experience.id} data-aos-delay={index * 100}>
                 <span className="date">{experience.date}</span>
                 <h2>{experience.title}</h2>
                 <p>{experience.company}</p>
