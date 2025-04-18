@@ -974,6 +974,11 @@ body .body-overlay {
   height: auto;
   max-height: 500px;
 }
+.portfolio-items .portfolio-item.portfolio-half .portfolio-item-inner {
+  height: auto;
+  max-height: 500px;
+  max-width: 50%;
+}
 .portfolio-items .portfolio-item .portfolio-item-inner img {
   display: block;
   width: 100%;

@@ -1,13 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useMemo } from 'react';
 import { config } from '../../config';
 
 export default function Herosec() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   const heroContent = useMemo(() => (
     <div className="hero-content content-width">
       <div className="section-header">

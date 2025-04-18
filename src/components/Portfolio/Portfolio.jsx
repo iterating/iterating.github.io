@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react"
-import AOS from "aos"
-import "aos/dist/aos.css"
 import { config } from "../../config"
 import { portfolioData } from "./portfolioData"
 import Lightbox from "lightbox2"
@@ -8,9 +6,8 @@ import "lightbox2/dist/css/lightbox.min.css"
 import "lightbox2/dist/js/lightbox.js"
 
 export default function Portfolio() {
-  // Initialize AOS and Lightbox only once when component mounts
+  // Initialize only Lightbox when component mounts (AOS is handled at the app level)
   useEffect(() => {
-    AOS.init({ duration: 1000 })
     Lightbox.option({
       resizeDuration: 200,
       fadeDuration: 600,
@@ -21,18 +18,20 @@ export default function Portfolio() {
 
   // Memoize the gallery link creation to improve performance
   const renderGalleryLinks = useCallback((project) => {
-    if (!Array.isArray(project.link)) return null;
-    
-    return project.link.slice(1).map((link, index) => (
-      <a 
-        key={`gallery-link-${project.id}-${index}`}
-        href={config.getAssetPath(link)} 
-        data-lightbox={`gallery-${project.id}`}
-        style={{ display: 'none' }}
-        loading="lazy"
-      ></a>
-    ));
-  }, []);
+    if (!Array.isArray(project.link)) return null
+
+    return project.link
+      .slice(1)
+      .map((link, index) => (
+        <a
+          key={`gallery-link-${project.id}-${index}`}
+          href={config.getAssetPath(link)}
+          data-lightbox={`gallery-${project.id}`}
+          style={{ display: "none" }}
+          loading="lazy"
+        ></a>
+      ))
+  }, [])
 
   // Memoize project items to prevent unnecessary re-renders
   const projectItems = useMemo(() => {
@@ -49,7 +48,10 @@ export default function Portfolio() {
               // If link is an array, create multiple lightbox links
               <>
                 {/* First image is visible */}
-                <a href={config.getAssetPath(project.link[0])} data-lightbox={`gallery-${project.id}`}>
+                <a
+                  href={config.getAssetPath(project.link[0])}
+                  data-lightbox={`gallery-${project.id}`}
+                >
                   <img
                     src={config.getAssetPath(
                       typeof project.image === "string"
@@ -100,8 +102,8 @@ export default function Portfolio() {
           </h2>
         </div>
       </div>
-    ));
-  }, [portfolioData.projects, renderGalleryLinks]);
+    ))
+  }, [portfolioData.projects, renderGalleryLinks])
 
   return (
     <section
@@ -121,9 +123,7 @@ export default function Portfolio() {
             </h1>
           </div>
 
-          <div className="row portfolio-items">
-            {projectItems}
-          </div>
+          <div className="row portfolio-items">{projectItems}</div>
         </div>
       </div>
     </section>

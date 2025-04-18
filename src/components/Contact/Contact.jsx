@@ -1,12 +1,6 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState, useCallback, useMemo } from 'react';
 
 export default function Contact() {
-  // Initialize AOS animation library
-  useEffect(() => {
-    AOS.init({ duration: 1300 });
-  }, []);
 
   // Form state management
   const [formData, setFormData] = useState({

@@ -49,7 +49,10 @@ export default function Websites() {
                       // If link is an array, create multiple lightbox links
                       <>
                         {/* First image is visible */}
-                        <a href={config.getAssetPath(project.link[0])} data-lightbox={`gallery-${project.id}`}>
+                        <a
+                          href={config.getAssetPath(project.link[0])}
+                          data-lightbox={`gallery-${project.id}`}
+                        >
                           <img
                             src={config.getAssetPath(
                               typeof project.image === "string"
@@ -67,11 +70,11 @@ export default function Websites() {
                         </a>
                         {/* Hidden links for additional gallery images */}
                         {project.link.slice(1).map((link, index) => (
-                          <a 
+                          <a
                             key={index}
-                            href={config.getAssetPath(link)} 
+                            href={config.getAssetPath(link)}
                             data-lightbox={`gallery-${project.id}`}
-                            style={{ display: 'none' }}
+                            style={{ display: "none" }}
                             loading="lazy"
                           ></a>
                         ))}
@@ -104,7 +107,13 @@ export default function Websites() {
                     </ul>
                   </div>
                   <h2>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">{project.title}</a>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.title}
+                    </a>
                   </h2>
                 </div>
               </div>
