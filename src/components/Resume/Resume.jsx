@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { resumeData } from './resumeData';
+import React, { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+import { resumeData } from "./resumeData"
 
 export default function Resume() {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+    AOS.init({ duration: 1000 })
+  }, [])
   return (
     <section className="resume-area page-section scroll-to-page" id="resume">
       <div className="custom-container">
         <div className="resume-content content-width">
           <div className="section-header">
             <h4 className="subtitle scroll-animation" data-aos="fade-up">
-              <i className="las la-briefcase"></i> {resumeData.experienceSection.sectionTitle}
+              <i className="las la-briefcase"></i>{" "}
+              {resumeData.experienceSection.sectionTitle}
             </h4>
             <h1 className="scroll-animation" data-aos="fade-up">
               <span>{resumeData.experienceSection.sectionHeading}</span>
@@ -21,36 +22,61 @@ export default function Resume() {
           </div>
 
           <div className="resume-timeline">
-            {resumeData.experienceSection.experiences.map((experience, index) => (
-              <div className="item scroll-animation" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} key={experience.id} data-aos-delay={index * 100}>
-                <span className="date">{experience.date}</span>
-                <h2>{experience.title}</h2>
-                <p>{experience.company}</p>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '0.9rem' }}>
-                  {experience.accomplishments.map((accomplishment, i) => (
-                    <li key={i}>{accomplishment}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {resumeData.experienceSection.experiences.map(
+              (experience, index) => (
+                <div
+                  className="item scroll-animation"
+                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                  key={experience.id}
+                  data-aos-delay={index * 100}
+                >
+                  <span className="date">{experience.date}</span>
+                  <h2>{experience.title}</h2>
+                  <p>{experience.company}</p>
+                  <ul
+                    style={{
+                      listStyleType: "disc",
+                      paddingLeft: "20px",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {experience.accomplishments.map((accomplishment, i) => (
+                      <li key={i}>{accomplishment}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            )}
 
             <br />
             <h1 className="scroll-animation" data-aos="fade-up">
               {resumeData.educationSection.sectionHeading}
             </h1>
 
-            {resumeData.educationSection.educationItems.map((education, index) => (
-              <div className="item scroll-animation" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} key={education.id}>
-                <span className="date">{education.date}</span>
-                <h2>{education.institution}</h2>
-                <p>{education.degree}</p>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '0.9rem' }}>
-                  {education.accomplishments.map((accomplishment, i) => (
-                    <li key={i}>{accomplishment}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {resumeData.educationSection.educationItems.map(
+              (education, index) => (
+                <div
+                  className="item scroll-animation"
+                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                  key={education.id}
+                >
+                  <span className="date">{education.date}</span>
+                  <h2>{education.institution}</h2>
+                  <p>{education.degree}</p>
+                  <ul
+                    style={{
+                      listStyleType: "disc",
+                      paddingLeft: "20px",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {education.accomplishments.map((accomplishment, i) => (
+                      <li key={i}>{accomplishment}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            )}
 
             {/* <br /> */}
             {/* <h1 className="scroll-animation" data-aos="fade-up">
@@ -93,5 +119,5 @@ export default function Resume() {
         </div>
       </div>
     </section>
-  );
+  )
 }

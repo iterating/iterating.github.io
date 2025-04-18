@@ -1,12 +1,6 @@
-import React, { useEffect, useMemo } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useMemo } from 'react';
 
 export default function About() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   const aboutContent = useMemo(() => (
     <div className="about-content content-width">
       <div className="section-header">

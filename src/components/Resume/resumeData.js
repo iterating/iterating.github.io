@@ -18,8 +18,8 @@ export const resumeData = {
           "Implemented real-time pub/sub event architecture with SSE, enabling instant order updates across all platforms",
           "Developed RESTful API endpoints that retrieves and updates order information between Square's e-commerce SDK and Supabase database, resulting in seamless order management",
           "Developed optimized kiosks with Vue.js and TypeScript for order entry that reduced in-person order times by 25% and reduced manual errors",
-          "Created database migration tools with Javascript and SQL, leading to successful database migration"
-        ]
+          "Created database migration tools with Javascript and SQL, leading to successful database migration",
+        ],
       },
       {
         id: 2,
@@ -30,8 +30,8 @@ export const resumeData = {
           "Developed scalable web applications that transformed the company into Boston's market leader, growing from 4 to 80+ employees through coordinated dispatch and real-time communications",
           "Built location-based worker matching system using Google Cloud API and MongoDB geospatial indexing, improving service time by 40%",
           "Implemented robust security infrastructure with JWT-based authentication and role-based access control for secure data access across microservices",
-          "Deployed system on AWS with ElasticBeanstalk running EC2 instances, maintaining high availability and scalability"
-        ]
+          "Deployed system on AWS with ElasticBeanstalk running EC2 instances, maintaining high availability and scalability",
+        ],
       },
       {
         id: 3,
@@ -40,8 +40,8 @@ export const resumeData = {
         company: "Greater Boston Snow Removal, Boston MA",
         accomplishments: [
           "Managed multiple operations teams and implemented route optimizations that reduced operational costs by 25%",
-          " Leveraged Excel, SQL, and Tableau to create dashboards for KPI tracking and business intelligence, driving strategic decision-making"
-        ]
+          " Leveraged Excel, SQL, and Tableau to create dashboards for KPI tracking and business intelligence, driving strategic decision-making",
+        ],
       },
       {
         id: 4,
@@ -50,22 +50,23 @@ export const resumeData = {
         company: "Vecna Healthcare, Burlington MA",
         accomplishments: [
           "Provided usability improvements to EMR frontend with feedback from training and working with clinical staff, reducing clinical documentation time by 30%",
-          "Collaborated closely with engineering teams to prototype user interfaces with HTML, CSS, and JavaScript that meet the needs of healthcare providers and improve patient care outcomes"
-        ]
+          "Collaborated closely with engineering teams to prototype user interfaces with HTML, CSS, and JavaScript that meet the needs of healthcare providers and improve patient care outcomes",
+        ],
       },
       {
         id: 5,
         date: "2011 - 2013",
         title: "Research Assistant in Vaccine Immunology",
-        company: "Vaccine Immunotherapy Center, Massachusetts General Hospital, Boston MA",
+        company:
+          "Vaccine Immunotherapy Center, Massachusetts General Hospital, Boston MA",
         accomplishments: [
           "Performed cutting edge transplant immunology research",
           "Utilized Python to perform statistical analyses of data from in-vitro and microarray experiments",
           "Programmed 'Cellbot', an automated cell counting program in Java and ImageJ",
-          "Published in American Journal of Transplantation"
-        ]
-      }
-    ]
+          "Published in American Journal of Transplantation",
+        ],
+      },
+    ],
   },
   educationSection: {
     sectionHeading: "Education",
@@ -86,8 +87,8 @@ export const resumeData = {
         degree: "M.D. Candidate",
         accomplishments: [
           "Developed clinical decision support tools and won American College of Physicians National Abstract Competition",
-          "Published in ACP Impact and presented at Digestive Disease Interventions"
-        ]
+          "Published in ACP Impact and presented at Digestive Disease Interventions",
+        ],
       },
       {
         id: 3,
@@ -96,19 +97,18 @@ export const resumeData = {
         degree: "B.Sc. GPA: 3.7",
         accomplishments: [
           "Graduated Magna Cum Laude with Thesis Honors",
-          "Managed IT infrastructure as Computer Lab Administrator at Eliot-Pearson Children's School, later earning Red Hat Certified System Administrator (RHCSA) certification"
-        ]
+          "Managed IT infrastructure as Computer Lab Administrator at Eliot-Pearson Children's School, later earning Red Hat Certified System Administrator (RHCSA) certification",
+        ],
       },
       {
         id: 4,
         date: "",
         institution: "Choate Rosemary Hall",
-        degree: "American Invitational Mathematics Examination (AIME) Qualifier",
-        accomplishments: [
-          "Recognized for exceptional problem-solving  skills"
-        ]
-      }
-    ]
+        degree:
+          "American Invitational Mathematics Examination (AIME) Qualifier",
+        accomplishments: ["Recognized for exceptional problem-solving  skills"],
+      },
+    ],
   },
   skillsSection: {
     sectionHeading: "Skills",
@@ -122,10 +122,10 @@ export const resumeData = {
       "AWS, EC2, DynamoDB, RDS, ElasticBeanstalk",
       "LangChain, Streamlit, FastAPI",
       "Git, Linux environments, Docker, Bash",
-      "Agile and Lean methodologies, User Stories"
+      "Agile and Lean methodologies, User Stories",
       // "Figma, Illustrator, Photoshop",
       // "Excel, Tableau"
-    ]
+    ],
   },
   // projectsSection: {
   //   // sectionHeading: "Projects",
@@ -152,4 +152,4 @@ export const resumeData = {
   //     }
   //   ]
   // }
-};
+}
