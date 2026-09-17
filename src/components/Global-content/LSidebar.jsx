@@ -15,8 +15,8 @@ export default function LSidebar() {
         alt={personalData.name}
         loading="lazy"
       />
-      <h2 className="email">{personalData.email}</h2>
-      <h2 className="address">{personalData.address}</h2>
+      {/* <h2 className="email">{personalData.email}</h2> */}
+      {/* <h2 className="address">{personalData.address}</h2> */}
       <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
         {personalData.socialProfiles.map((profile, index) => (
           <li key={index}>

@@ -7,7 +7,7 @@ export const personalData = {
   name: "Jonathan Young",
   designation: "Full Stack Engineer & Web Developer",
   profileImage: "assets/images/profile.professional.portrait.jpg",
-  email: "jyoung0696@gmail.com",
+  email: "jyoung069631@gmail.com",
   address: "",
   resumeFile: "assets/jonathanyoung.cv.pdf",
   socialProfiles: [

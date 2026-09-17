@@ -4,7 +4,11 @@ import './styles/index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
-  <App />
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 // Enable web vitals reporting in production
-reportWebVitals(process.env.NODE_ENV === 'production' ? console.log : null);
+// reportWebVitals(process.env.NODE_ENV === 'production' ? console.log : null);
